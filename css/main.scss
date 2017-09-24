@@ -1,0 +1,287 @@
+@import 'helpers/mixins';
+$navy: #002d62;
+$mediumBlue: #2274a5;
+$red: #ff2525;
+$transWhite: rgba(255, 255, 255, 0.59);
+$transRed: rgba(255, 37, 37, 0.5);
+$grey: #d6d6d6;
+$white: #fff;
+
+$displayFont: 'Muli', sans-serif;
+
+body {
+  background-color: $grey;
+  font-family: $displayFont;
+}
+
+.jumbotron {
+background-image: url("../img/flags.png"), url("../img/flags.png"), url("../img/simmons-beautyrest-adjustable-base.jpg");
+background-repeat: no-repeat;
+background-position: -30% -10%, 130% -10%, center;
+background-size: auto, auto, cover;
+background-attachment: scroll, scroll, fixed;
+@include border-radius(0 0 65% 65% / 13%);
+@media only screen and (max-width: 1350px) {background-position: -65% -10%, 165% -10%, center;}
+@media only screen and (max-width: 1199px) {background-position: -125% -5%, 225% -5%, center;}
+@media only screen and (max-width: 1080px) {background-position: -208% -5%, 308% -5%, center;}
+@media only screen and (max-width: 991px) {background-position: -355% -5%, 455% -5%, center;}
+@media only screen and (max-width: 933px) {background-position: -600% -5%, 700% -5%, center;}
+//@media only screen and (max-width: 893px) {background-position: -1000% -5%, 1100% -5%, center;}
+//@media only screen and (max-width: 870px) {background-position: -2000% -5%, 2200% -5%, center;}
+@media only screen and (max-width: 787px) {@include border-radius(0 0 55% 55% / 5%);
+//background-position: -1500% -5%, 1600% -5%, center;
+}
+@media only screen and (max-width: 880px) {background-position: 20% -5%, 8000% -100%, center;}
+@media only screen and (max-width: 1024px) {background-attachment: scroll, scroll, scroll;}
+margin-bottom: -35px;
+z-index: 100;
+position: relative;
+overflow: hidden;
+.h1, .h3 {
+  font-weight: 700;
+  color: $navy;
+}
+.h1 {
+  font-size: 60px;
+}
+.h3 {
+  margin-top: 0;
+  margin-bottom: 21px;
+  font-size: 25px;
+}
+.cta {
+  background-color: $transWhite;
+  padding-bottom: 20px;
+}
+.tagline {
+  .mainTag {
+    display:block;
+    margin-bottom: -10px;
+    font-weight: 900;
+    color: $red;
+    font-size: 60px;
+    @media only screen and (max-width: 1199px) {font-size:48px;}
+    @media only screen and (max-width: 991px) {font-size: 57px;}
+    @media only screen and (max-width: 390px) {font-size: 45px;}
+  }
+  .subTag {
+    color: $mediumBlue;
+    font-size: 35px;
+    letter-spacing: 7px;
+    @media only screen and (max-width: 1199px) {
+      font-size: 32px;
+      letter-spacing: 3px;}
+    @media only screen and (max-width: 991px) {font-size: 39px;}
+    @media only screen and (max-width: 390px) {font-size: 30px;}
+  }
+}
+.col-sm-4.logo {
+  padding: 10px 0 0 30px;
+  @media only screen and (max-width: 769px) {
+    padding: 10px 5px;
+  }
+}
+.verticalRibbon {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left: 61px;
+    right:50%;
+    background-color: $transWhite;
+  }
+}
+
+main {
+  background-color: $white;
+  padding-top: 55px;
+  border-left: $red solid 10px;
+  border-right: $red solid 10px;
+  padding-bottom: 30px;
+}
+.paddedTop {
+  padding-top:30px;
+}
+
+.smallBox {
+  color: white;
+  text-align: center;
+  @media only screen and (max-width: 767px) {padding-bottom:10px;}
+  p {
+    padding-top: 16%;
+    font-size: 3em;
+    @media only screen and (max-width: 1199px) {font-size:2.5em; padding-top:14%;}
+    @media only screen and (max-width: 991px) {font-size:1.75em;padding-top:10%;}
+    @media only screen and (max-width: 767px) {font-size:2.5em;padding-top:0;}
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+  }
+  font-variant-caps: small-caps;
+  overflow: hidden;
+}
+.blueBox {
+  background-color: $mediumBlue;
+  @include text-shadow($mediumBlue, $navy);
+}
+.redBox {
+  background-color: $red;
+  @include text-shadow(#fb4d4d, #a51010);
+}
+
+.btn-primary {
+  background-color: #000;
+  border: none;
+  @include border-radius(0);
+  transition: all .25s;
+  &:hover {
+    background-color: $mediumBlue;
+  }
+}
+.btn-lg {
+  width: 65%;
+}
+
+footer {
+  background: $red url("../img/pegasus.jpg") no-repeat center;
+  background-size: cover;
+  color: white;
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background: $transRed;
+  }
+  .topRow {
+    padding: 120px 0 75px 0;
+  }
+  .h1 {
+    @include text-shadow(#99231f, #480807);
+    font-size: 4.2em;
+    font-weight: 900;
+    letter-spacing: .1em;
+    margin-top: -15px;
+    margin-bottom: 0;
+    @media only screen and (max-width: 767px) {font-size:3em;}
+  }
+  label {
+    @include text-shadow(#99231f, #480807);
+    font-weight: 500;
+    font-size: 2.2em;
+    vertical-align: middle;
+    @media only screen and (max-width: 767px) {font-size:2em;}
+    @media only screen and (max-width: 405px) {font-size:1.6em;}
+  }
+  .copyright {
+    text-align: center;
+    a {
+      color:white;
+      font-weight: 700;
+      font-size: 1.2em;
+      &:hover, &focus {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+  .btn {
+    width: 100%;
+    font-size: 1.75em;
+    text-tranform: uppercase;
+  }
+  .form-group.form-inline {
+    padding-top: 15px;
+  }
+  .form-control {
+    @include border-radius(0);
+    background-color: $transWhite;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+}
+.form-control::-webkit-input-placeholder { color: white;font-weight:700;font-size:1.2em; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: white;font-weight:700;font-size:1.2em; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: white;font-weight:700;font-size:1.2em; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: white;font-weight:700;font-size:1.2em; }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: white;font-weight:700;font-size:1.2em; }  /* Microsoft Edge */
+select.form-control {
+  color:white;font-weight:700;font-size:1.2em;
+  option {
+    background-color: black;
+  }}
+
+.mainRibbon {
+  position: relative;
+    color: #fff;
+    background: $mediumBlue;
+    font-size: 1.5em;
+    padding: 10px 10px 10px 20px;
+    left: -34px;
+    width: 106%;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    @include border-radius(2px 2px 0 rgba(0,0,0,0.1));
+    @include text-shadow($mediumBlue, $navy);
+    @media only screen and (max-width: 1199px) {left: -28px;}
+    @media only screen and (max-width: 991px) {width: 108%;}
+    @media only screen and (max-width: 766px) {width: 100%;left:0;}
+}
+
+.mainRibbon:before, .mainRibbon:after {
+ content: "";
+ position: absolute;
+ display: block;
+ bottom: -1em;
+ border: 1.5em solid #0a6094;
+ z-index: -1;
+ @media only screen and (max-width: 1296px) {display:none;}
+ @media only screen and (max-width: 1499px) {display:block;}
+ @media only screen and (max-width: 1296px) {display:none;}
+ @media only screen and (max-width: 991px) {display:block;}
+ @media only screen and (max-width: 856px) {display:none;}
+}
+.mainRibbon:before {
+ left: -2em;
+ border-right-width: 1.5em;
+ border-left-color: transparent;
+}
+.mainRibbon:after {
+ right: -2em;
+ border-left-width: 1.5em;
+ border-right-color: transparent;
+}
+
+.ribbon-content {
+  margin: 0;
+  span {
+    font-variant-caps: small-caps;
+    vertical-align: text-top;
+  }
+}
+
+.socialMedia {
+  font-size: 5em;
+  a {
+    color: white;
+    transition: all .25s;
+    &:hover {
+      color: #000;
+    }
+  }
+  @media only screen and (max-width: 476px) {font-size:3em;}
+}
+.list-inline>li {
+  padding: 0 20px;
+  @media only screen and (max-width: 476px) {padding:0 5px;}
+}
+
+.showMobile {
+  display: none;
+  @media only screen and (max-width: 767px) {display:block;}
+}
+.hideMobile {
+  @media only screen and (max-width: 767px) {display:none;}
+}
